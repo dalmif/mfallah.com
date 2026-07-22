@@ -1,29 +1,34 @@
 ---
 title: 'Why you might need ZeroByte'
-description: 'A short look at ZeroByte, a self-hosted backup automation tool built on top of restic, and why it might be the missing piece in your homelab.'
+description: 'ZeroByte is a mobile-first personal storage system I''m working on: extend your phone''s storage with hardware you own, and keep using your files as if they never left.'
 pubDate: 'Jul 22 2026'
 ---
 
-If you self-host anything — a homelab, a media server, a few Docker containers on a VPS — you already know the uncomfortable truth: your backup strategy is probably "I'll set that up later."
+Phones run out of storage. Photos, 4K videos, WhatsApp and Telegram media, downloads — years of personal data pile up until the "storage almost full" warning becomes a lifestyle.
 
-[ZeroByte](https://github.com/nicotsx/zerobyte) is an open-source tool that makes "later" a lot easier to turn into "now". It's backup automation for self-hosters, built on top of [restic](https://restic.net/), one of the most trusted backup engines around.
+The usual ways out are all unsatisfying. You can keep buying phones with more storage. You can pay Google One or iCloud rent forever. You can copy everything to an external disk and lose convenient access to it. Or you can set up Nextcloud, a Synology, or a NAS — which is powerful, but often feels like administering a server rather than extending a phone.
 
-## The problem it solves
+**ZeroByte** is a project I'm working on that tries to offer another choice: a mobile-first personal storage system that extends your phone's storage using hardware *you own*. Buy a large disk once, connect it to a small device at home, and use it from your phone almost as naturally as internal storage. Move hundreds of gigabytes off your phone — and keep browsing, searching, streaming, and restoring those files as if they never really disappeared.
 
-restic itself is excellent: encrypted, deduplicated, incremental backups to almost any storage backend. But it's a CLI tool. To use it properly you end up hand-writing cron jobs, wrapper scripts, retention policies, and monitoring — and every one of those is something you can get wrong silently. A backup that fails quietly for six months is worse than no backup, because you *think* you're covered.
+## Not a cloud, not a NAS
 
-ZeroByte puts a web UI and a scheduler on top of restic, so you get the reliability of the engine without maintaining the glue yourself.
+Compared to **traditional cloud storage**, the difference is ownership. With iCloud or Dropbox, your data lives on someone else's infrastructure and you rent capacity month after month. With ZeroByte, your files live on your own disk: no subscription for gigabytes, no dependency on a provider's policies or pricing, real privacy because the originals never leave hardware you control, fast transfers over your local network, and full offline operation at home — it works even when your internet doesn't.
 
-## What you get
+Compared to a **self-hosted cloud**, the difference is framing. Nextcloud and NAS apps say: "here is your private server and some cloud-like apps." ZeroByte says: "here is extra storage for your phone that happens to live in your home." No Docker, no port forwarding, no reverse proxies. Connect the device, install the app, pair the phone, move files, free up space. The server exists to serve the phone — not the other way around.
 
-- **Scheduled backups with retention policies** — define how often to back up and how many snapshots to keep, and it just runs.
-- **End-to-end encryption and deduplication** — inherited from restic, so your data is safe even on storage you don't control.
-- **Flexible sources and destinations** — back up local directories or network shares (NFS, SMB, SFTP, WebDAV) to local disks, S3-compatible storage like MinIO or Wasabi, and via rclone to 40+ cloud providers including Google Drive and Dropbox.
-- **Simple deployment** — it ships as a Docker Compose setup, so it fits naturally into a self-hosted stack.
-- **Visibility** — a dashboard that shows whether your backups actually ran, which is half the battle.
+## Storage extension, not sync
 
-## Who is it for?
+Most tools in this space are built around synchronization: keeping copies aligned across devices. ZeroByte's primary action is different — *safely place a file on ZeroByte and remove the phone copy*. It's closer to storage tiering: your phone is the fast, limited tier; your disk is the large, owned tier. A 20 GB video can leave your phone entirely while remaining visible and playable from the same interface.
 
-If you're comfortable writing and maintaining your own restic scripts, you may not need it. But if you want the 3-2-1 backup rule without becoming the full-time maintainer of your own backup infrastructure, ZeroByte hits a nice sweet spot: serious backup technology underneath, minimal effort on top.
+A few principles make that seamless:
 
-Your future self — the one staring at a dead disk — will thank you.
+- **One merged library.** Local and remote files appear together. Half your camera roll on the phone, the older half on ZeroByte — you see one timeline and never have to remember where each photo lives.
+- **Open without downloading.** Stream a video, view a photo, or read a document straight from your disk, without needing enough free phone space to restore it first.
+- **Your folder structure is preserved.** `DCIM/Camera`, `Download`, your WhatsApp media — files keep their original paths on the disk. Your backups stay readable with an ordinary file manager, and if the app disappeared tomorrow, your data would still be yours. No lock-in.
+- **Deterministic by design.** You always know where a file physically is, whether it's been safely copied, and what a restore will do. Duplicates are never silently overwritten — identical content is deduplicated, conflicting content is preserved. Backing up and freeing space are explicit, separate intentions.
+
+## The point
+
+Cloud storage asks you to rent your own memories back. Self-hosted clouds ask you to become a sysadmin. ZeroByte's bet is that there's room for something in between: storage you own, with the polish of a consumer product — a phone that simply never feels full again.
+
+I'll be sharing more about ZeroByte's design and internals here as the project evolves.
