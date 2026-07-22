@@ -1,0 +1,140 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Resume | ${SITE_TITLE}`} description="Resume of Mohammad Fallah" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Resume</h1>
+			<p>
+				I'm a software engineer with 10 years of experience in Android development — but my work
+				isn't only about Android; it's about engineering itself. I'm very passionate about diving
+				deep into the challenges no one else likes to go into, and I enjoy sharing my knowledge
+				about architecture, designs, and paradigms.
+			</p>
+			<p class="links">
+				<a href="https://github.com/dalmif" target="_blank">GitHub</a>&ensp;&middot;&ensp;<a
+					href="https://www.linkedin.com/in/mohammad-fallah-840/"
+					target="_blank">LinkedIn</a>&ensp;&middot;&ensp;<a
+					href="https://medium.com/@mohammadfallah840"
+					target="_blank">Medium</a>&ensp;&middot;&ensp;<a href="mailto:mohammadfallah840@gmail.com">Email</a>
+			</p>
+
+			<h2>Experience</h2>
+
+			<section>
+				<h3>Android Developer — Framna (formerly Shape)</h3>
+				<p class="meta">Copenhagen, Denmark &middot; March 2024 – Present</p>
+				<ul>
+					<li>
+						Work across teams on advanced Android apps involving native libraries, media handling,
+						and performance-critical features.
+					</li>
+					<li>Contribute to major architecture and design decisions across projects.</li>
+					<li>
+						Build and maintain shared libraries for navigation, UI components, and Gradle plugins
+						used company-wide.
+					</li>
+					<li>
+						Proposed and implemented SOSA — a Redux-inspired, declarative state architecture for
+						Jetpack Compose, replacing ViewModels.
+					</li>
+					<li>
+						Deliver monthly tech talks on Gradle plugins, Jetpack Compose internals,
+						graphics/shaders, and more.
+					</li>
+					<li>Lead Android developer on several projects, with a focus on robust architecture.</li>
+				</ul>
+				<p class="meta">Kotlin, Flow, Jetpack libraries, DI, Java, RxJava, Gradle</p>
+			</section>
+
+			<section>
+				<h3>Senior Android Developer — Gomes Gostar</h3>
+				<p class="meta">Tehran &middot; January 2022 – January 2023</p>
+				<ul>
+					<li>Rewrote network requests in C and enforced SSL pinning for more secure client code.</li>
+					<li>Generated checksums with encryption and hashing methods to safeguard against MITM.</li>
+					<li>Encrypted DEX files to increase the security of Java bytecode.</li>
+				</ul>
+				<p class="meta">Java Reflection, AES Encryption, C, NDK, JNI, libcurl</p>
+			</section>
+
+			<section>
+				<h3>Senior Android Developer — CalathéJazz SA</h3>
+				<p class="meta">Remote (Switzerland) &middot; November 2020 – November 2021</p>
+				<ul>
+					<li>Developed a home service platform in two versions, for users and workers.</li>
+					<li>
+						Gathered and analyzed end-user requirements with management and marketing, and helped
+						design the database model and solve payment challenges with banking protocols.
+					</li>
+					<li>Built Android applications with Clean Architecture and best practices.</li>
+				</ul>
+				<p class="meta">
+					Kotlin, RxJava, MVVM, LiveData, Retrofit, Jetpack Navigation, Firebase, Material Design,
+					JavaScript, EBICS
+				</p>
+			</section>
+
+			<section>
+				<h3>Mid-level Android Developer — AloApplication</h3>
+				<p class="meta">Tehran &middot; October 2019 – July 2020</p>
+				<ul>
+					<li>Built a comprehensive core for developing customer applications.</li>
+					<li>Increased acceptance and unit test coverage for the app's main functionality.</li>
+				</ul>
+				<p class="meta">Kotlin, RxJava, MVVM, Jetpack libraries, Material Design, SQLite, Dagger2</p>
+			</section>
+
+			<section>
+				<h3>Mid-level Android Developer — Sib Abi Iranian</h3>
+				<p class="meta">Kashan &middot; January 2018 – January 2019</p>
+				<ul>
+					<li>Worked with a wide range of technologies as a largely self-taught developer.</li>
+					<li>
+						Implemented in-memory decryption of downloaded files to protect content from copying.
+					</li>
+				</ul>
+				<p class="meta">Kotlin, ExoPlayer, MVVM, RxJava, RESTful API, Retrofit, Cipher</p>
+			</section>
+
+			<section>
+				<h3>Junior Android Developer — Chakavak</h3>
+				<p class="meta">Kashan &middot; February 2017 – December 2017</p>
+				<ul>
+					<li>Developed two applications, including challenging high-level animations.</li>
+					<li>Worked on single-activity architecture and migrated Java code to early Kotlin.</li>
+				</ul>
+				<p class="meta">Java, Kotlin, MVP, RESTful API, Async Http Client, Butter Knife</p>
+			</section>
+
+			<h2>Languages</h2>
+			<ul>
+				<li>English — Advanced</li>
+				<li>Persian — Native</li>
+			</ul>
+		</main>
+		<Footer />
+		<style>
+			h3 {
+				margin-bottom: 0;
+			}
+			.meta {
+				margin: 0.25em 0 0.5em 0;
+				color: var(--text-light);
+				font-size: 0.9em;
+			}
+			section {
+				margin-bottom: 1.5em;
+			}
+		</style>
+	</body>
+</html>
