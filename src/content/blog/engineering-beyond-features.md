@@ -2,6 +2,7 @@
 title: 'Engineering Beyond Features'
 description: 'My talk on engineering beyond features — watch the video.'
 pubDate: 'Jul 17 2026'
+presentation: true
 ---
 
 A talk I gave about engineering beyond features. Watch it below:

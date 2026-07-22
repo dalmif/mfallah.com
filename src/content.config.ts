@@ -14,6 +14,8 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
+			// Marks posts that are talks/presentations, listed on /presentations
+			presentation: z.boolean().optional(),
 		}),
 });
 
