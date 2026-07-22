@@ -1,7 +1,7 @@
 ---
 title: 'SOSA: A Declarative Alternative to MVVM and MVI'
 description: 'My talk on SOSA — a Redux-inspired, declarative state architecture for Jetpack Compose that replaces ViewModels.'
-pubDate: 'Jul 22 2026'
+pubDate: 'Oct 31 2025'
 ---
 
 My talk on SOSA — a Redux-inspired, declarative state architecture for Jetpack Compose that I proposed and implemented as an alternative to MVVM and MVI. Watch it below:
