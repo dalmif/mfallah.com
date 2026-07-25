@@ -12,9 +12,9 @@ As we rely more on AI-generated code, I feel that our codebases are starting to 
 
 That is because it is generated from a well-defined set of annotations and functions, and the output is fully deterministic. We can generate it on different machines at different times and still get the same result.
 
-We can clearly see that something is missing from our current AI code-generation workflow: developers are sometimes not involved in the prompting process.
+We can clearly see that something is missing from our current AI code-generation workflow.
 
-A project manager writes a prompt based on their own knowledge and a Jira ticket, and then developers are assigned to review the generated code and its changes—sometimes without even seeing the original prompt.
+A project manager or even a developer writes a prompt based on their own knowledge and a Jira ticket, and then other developers are assigned to review the generated code and its changes—sometimes without even seeing the original prompt.
 
 Because of this, some people suggest spending more time on the initial prompt, storing it in Git, sharing it with the team, and asking developers for input.
 
